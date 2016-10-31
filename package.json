@@ -11,15 +11,15 @@
     "abbrev": "^1.0.5",
     "android-icons": "^2.0.1",
     "colors": "^1.0.3",
-    "lwip": "0.0.6",
+    "lwip": "0.0.9",
     "q": "^1.1.2",
-    "yargs": "^3.7.0"
+    "yargs": "^6.3.0"
   },
   "devDependencies": {
     "mkdirp": "^0.5.0",
     "rimraf": "^2.2.8",
-    "semantic-release": "^3.0.4",
-    "standard": "^3.3.2",
+    "semantic-release": "^4.3.5",
+    "standard": "^8.5.0",
     "tape": "^4.0.0"
   },
   "engines": {
