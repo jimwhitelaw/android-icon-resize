@@ -5,7 +5,17 @@ var minimist = require('minimist')
 var pkg = require('../package.json')
 var resize = require('../')
 
+console.log(abbrev('help', 'input', 'output', 'version'))
 var argv = minimist(process.argv.slice(2), {alias: abbrev('help', 'input', 'output', 'version')})
+
+// minimist will produce an array of values for args with full --options
+// smush it down to a single string that resize() can use
+if (argv.input.constructor === Array) {
+  argv.input = argv.input[0]
+}
+if (argv.output.constructor === Array) {
+  argv.output = argv.output[0]
+}
 
 function help () {
   console.log([
