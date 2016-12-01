@@ -5,7 +5,6 @@ var minimist = require('minimist')
 var pkg = require('../package.json')
 var resize = require('../')
 
-console.log(abbrev('help', 'input', 'output', 'version'))
 var argv = minimist(process.argv.slice(2), {alias: abbrev('help', 'input', 'output', 'version')})
 
 // minimist will produce an array of values for args with full --options
