@@ -10,15 +10,6 @@ var opts = {
 }
 var argv = minimist(process.argv.slice(2), opts)
 
-// minimist will produce an array of values for args with full --options
-// smush it down to a single string that resize() can use
-if (argv.input.constructor === Array) {
-  argv.input = argv.input[0]
-}
-if (argv.output.constructor === Array) {
-  argv.output = argv.output[0]
-}
-
 function help () {
   console.log([
     pkg.description,
@@ -38,6 +29,14 @@ function cli (argv) {
   }
 
   if (argv.input) {
+    // minimist will produce an array of values for args with full --options
+    // smush it down to a single string that resize() can use
+    if (argv.input.constructor === Array) {
+      argv.input = argv.input[0]
+    }
+    if (argv.output.constructor === Array) {
+      argv.output = argv.output[0]
+    }
     return resize(argv.input, argv.output)
   }
 
